@@ -18,10 +18,6 @@
 
         <render args="elementTmpl" ifnot="hasAddons()"/>
 
-        <div class="admin__control-addon">
-            <strong data-bind="text: $data.selectedValuesView"></strong>
-        </div>
-
         <div class="admin__control-addon" if="hasAddons()">
             <render args="elementTmpl"/>
 
@@ -38,6 +34,10 @@
         <render args="fallbackResetTpl" if="$data.showFallbackReset && $data.isDifferedFromDefault"/>
 
         <label class="admin__field-error" if="error" attr="for: uid" text="error"/>
+
+        <div class="admin__control-addon">
+            <strong data-bind="text: $data.selectedValuesView"></strong>
+        </div>
 
         <div class="admin__field-note" if="$data.notice" attr="id: noticeId">
             <span translate="notice"/>
